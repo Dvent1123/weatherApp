@@ -10,7 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "opencage-api-client": "^0.5.1"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",

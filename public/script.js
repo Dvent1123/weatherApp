@@ -1,23 +1,23 @@
 const searchElement = document.querySelector('[data-city-search]')
-const searchBox = new google.maps.places.SearchBox(searchElement)
-searchBox.addListener('places_changed', () =>{
-    const place = searchBox.getPlaces()[0]  //returns array and returns first element
+const weatherButton = document.getElementById('searchButton')
+let searchElementText = ''
 
-    if(place == null) return
-    const latitude = place.geometry.location.lat()
-    const longitude = place.geometry.location.lng()
+
+weatherButton.addEventListener('click', () =>{
+    searchElementText = searchElement.value
     fetch('/weather', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
+         method: 'POSt',
+
         body: JSON.stringify({
-            latitude: latitude,
-            longitude: longitude
-        })
-    }).then(res => res.json()).then(data => {
-        setWeatherData(data, place.formatted_address)
-    })
+         q: searchElementText
+        }),
+
+        headers: {
+         'Content-type': 'application/json; charset=UTF-8'
+        }
+})
+.then(res => res.json())
+.then(json => console.log(json))
+ 
 })
 
