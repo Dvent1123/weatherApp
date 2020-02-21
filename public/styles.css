@@ -100,6 +100,7 @@ body {
 .city-search-container{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .city-search{
@@ -113,5 +114,22 @@ body {
 }
 
 .button{
-    
+display:flex;
+padding:10px 15px;
+border:0.1em solid black;
+background-color: whitesmoke;
+margin-left: 10px;
+margin-top: 40px;
+border-radius: 5px;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+font-weight:300;
+color:#000000;
+text-align:center;
+transition: all 0.2s;
+}
+
+.button:hover{
+color: #FFFFFF;
+background-color:#000000;
 }
