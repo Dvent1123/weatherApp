@@ -20,7 +20,6 @@ app.use(express.static('public'))
 app.post('/weather', (req , res) =>{
     
     opencage.geocode(req.body).then(data => {
-    // console.log(JSON.stringify(data));
     if (data.status.code == 200) {
         if (data.results.length > 0) {
         var place = data.results[0];
@@ -47,13 +46,11 @@ app.post('/weather', (req , res) =>{
         console.log('hit free-trial daily limit');
         console.log('become a customer: https://opencagedata.com/pricing'); 
     } else {
-        // other possible response codes:
-        // https://opencagedata.com/api#codes
         console.log('error', data.status.message);
     }
     }).catch(error => {
     console.log('error', error.message);
-     })//.then(data => res.json(data.data.currently))
+     })
     
 
 })

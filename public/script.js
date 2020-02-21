@@ -6,7 +6,7 @@ let searchElementText = ''
 weatherButton.addEventListener('click', () =>{
     searchElementText = searchElement.value
     fetch('/weather', {
-         method: 'POSt',
+         method: 'POST',
 
         body: JSON.stringify({
          q: searchElementText
